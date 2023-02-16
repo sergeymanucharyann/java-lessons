@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Array {
     /**
-     * Ex.1
+     * Exercise 1
      * This is a method that prints the positive elements of an int[] array.
      *
      * @param num int[]
@@ -19,7 +19,7 @@ public class Array {
     }
 
     /**
-     * Ex. 2
+     * Exercise 2
      * This is a method that prints the elements of the short[] array
      * in reverse in order.
      *
@@ -32,7 +32,7 @@ public class Array {
     }
 
     /**
-     * Ex. 3
+     * Exercise 3
      * This is a method that finds and prints the largest element of the long[] array.
      *
      * @param i long[]
@@ -74,10 +74,11 @@ public class Array {
      * @return m , r
      */
     public int[] move(int[] r, int[] m) {
+        System.arraycopy(m, 0, r, 0, r.length);
         if (r.length != m.length) {
             System.out.println("Lengths are not equal");
         }
-        return m = r;
+        return m;
     }
 
     /**

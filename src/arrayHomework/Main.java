@@ -7,7 +7,7 @@ public class Main {
 
         Array arr = new Array();
 
-        int[] numbers = new int[]{1, 5, 6, -8, -56, -78, 2, 3, 78, 125, -7};//for exercise 1
+        int[] numbers = new int[]{1, 5, 6, -8, -56, -78, 2, 78, 125, -7};//for exercise 1
 
         short[] array = new short[]{1, 2, 3, 4, 5, 7, 8, 96};//for exercise 2
 
@@ -29,7 +29,6 @@ public class Main {
         System.out.println(Arrays.toString(arr.move(r, m)));
         arr.createArrays();
         System.out.println(arr.repeatNumber(forRepeat, 5));
-
 
     }
 }
