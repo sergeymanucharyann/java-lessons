@@ -11,8 +11,6 @@ public class Strings {
      * @return String
      */
     public String concat(String first, String second) {
-///        first = "hello";
-//        second = "world";
         return first + second;
     }
 
@@ -37,24 +35,12 @@ public class Strings {
      * @param str String
      */
     void newLine(String str) {
-        String[] arr = null;
+        String[] arr;
         arr = str.split(" ");
         for (String s : arr) {
             System.out.println(s);
         }
     }
-
-
-// /   void ppp(){
-//        String str = new String("hello world");
-//        for (int i = 0; i < str.length(); i++) {
-//            if (str[i] == " ") {
-//                str[i] = "\n";
-//            }
-//        }
-//        System.out.println(str);
-//    }
-
 
     /**
      * Ex.3
@@ -64,26 +50,30 @@ public class Strings {
      * @return reversWorld String type
      */
     public String revers(String originalWord) {
-        String reverseWord = "";
+        StringBuilder reverseWord = new StringBuilder();
         char ch;
         for (int i = 0; i < originalWord.length(); i++) {
             ch = originalWord.charAt(i);
-            reverseWord = ch + reverseWord;
+            reverseWord.append(ch);
         }
-        return reverseWord;
+        return reverseWord.toString();
     }
 
     /**
      * Ex.4
-     * @param line String
+     *
+     * @param line  String
      * @param token String
      * @return int
      */
     int countSubString(String line, String token) {
+        int tokenCount = 0;
         for (int i = 0; i < line.length(); i++) {
-
+            if (line.contains(token)) {
+                tokenCount++;
+            }
         }
-        return 0;
+        return tokenCount;
     }
 
     /**
@@ -105,22 +95,62 @@ public class Strings {
 
     /**
      * Ex.7
+     *
      * @param line String
      * @return String
      */
-
     public String removeSymbol(String line) {
-        return line.replaceAll("a","");
+        return line.replaceAll("a", "");
     }
 
     /**
      * Ex.8
      *
-     * @param line
-     * @return
+     * @param line String
+     * @return String
      */
     public String transferSymA(String line) {
-        return line.replaceAll("a","*");
+        return line.replaceAll("a", "*");
+    }
+
+    /**
+     * Ex.9
+     *
+     * @param string string
+     */
+    void getLongestWord(String string) {
+        StringBuilder word = new StringBuilder();
+        String large = "";
+        String[] words = new String[100];
+        int length = 0;
+
+        string = string + " ";
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) != ' ') {
+                word.append(string.charAt(i));
+            } else {
+                words[length] = word.toString();
+                length++;
+                word = new StringBuilder();
+            }
+        }
+
+        for (int k = 0; k < length; k++) {
+            if (large.length() < words[k].length())
+                large = words[k];
+        }
+        System.out.println("Largest word: " + large);
+    }
+
+    /**
+     * Ex.10
+     *
+     * @param line   Strong
+     * @param symbol Strong
+     */
+    void symbolIndex(String line, String symbol) {
+        System.out.println(line.indexOf(symbol));
     }
 
 }

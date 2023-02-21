@@ -4,20 +4,22 @@ public class Main {
     public static void main(String[] args) {
         Strings str = new Strings();
 
-        System.out.println(str.concat("hello" , " world"));
-        System.out.println(str.concat2(1,2," anime"));
+        System.out.println(str.concat("hello", " world"));
+        System.out.println(str.concat2(1, 2, " test code"));
 
-        str.newLine("Java Academic Program");
+        str.newLine("Java Academic Program");//2
 
-        str.revers("Coffee");
+        str.revers("Coffee");//3
 
-        str.countSubString("helli ji jmi", "i");
+        System.out.println(str.countSubString("Nice to meet you!!", "e"));//4
 
-        System.out.println(str.toUppercase("java"));
+        System.out.println(str.toUppercase("java"));//5
 
-        System.out.println(str.removeSymbol("java academic program"));
+        System.out.println(str.removeSymbol("java academic program"));//7
+        System.out.println(str.transferSymA("java academic program"));//8
 
-        System.out.println(str.transferSymA("java academic program"));
+        str.getLongestWord("Hardships often prepare ordinary people for an extraordinary destiny");//9
 
+        str.symbolIndex("oop in java ", "p");
     }
 }
