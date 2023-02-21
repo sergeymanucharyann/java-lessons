@@ -1,4 +1,4 @@
-package stringHomework;
+package string_homework;
 
 public class Main {
     public static void main(String[] args) {
