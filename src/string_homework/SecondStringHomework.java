@@ -1,5 +1,11 @@
 package string_homework;
 
+
+import array_homework.Array;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SecondStringHomework {
     /**
      * Ex.1
@@ -56,8 +62,108 @@ public class SecondStringHomework {
         }
     }
 
+    /**
+     * Ex. 4
+     *
+     * @param stringArray String[]
+     * @return ArrayList
+     */
+    ArrayList<String> toLoweCaseA(String[] stringArray) {
+        ArrayList<String> returnLine = new ArrayList<String>();
+        for (int i = 0; i < stringArray.length; i++) {
+            if (stringArray[i].length() == 3) {
+                if (stringArray[i].startsWith("a")) {
+                    returnLine.add(stringArray[i]);
+                }
+            }
+        }
+
+        return returnLine;
+    }
+
+    /**
+     * Ex.8
+     *
+     * @param string1
+     * @param string2
+     * @return
+     */
+    public String longestCommonSubstring(String string1, String string2) {
+        int count = 0;
+        List<String> strings1 = allSubStrings(string1);
+        List<String> strings2 = allSubStrings(string2);
+        List<String> commonSubStrings = new ArrayList<>();
+
+        for (int i = 0; i < strings1.size(); i++) {
+            if (strings2.contains(strings1.get(i))) {
+                commonSubStrings.add(strings1.get(i));
+            }
+        }
+        int maxLengthIndex = 0;
+        int maxLength = 1;
+        for (int i = 0; i < commonSubStrings.size(); i++) {
+            if (maxLength < commonSubStrings.get(i).length()) {
+                maxLength = commonSubStrings.get(i).length();
+                maxLengthIndex = i;
+            }
+        }
+        return commonSubStrings.get(maxLengthIndex);
+    }
+
+    /**
+     * This method used in Exercise 8
+     *
+     * @param str String
+     * @return List of Strings
+     */
+    public List<String> allSubStrings(String str) {
+        List<String> subStrings = new ArrayList<>();
+        for (int i = 0; i < str.length() - 1; i++) {
+            for (int j = i; j < str.length(); j++) {
+                if (!subStrings.contains(str.substring(i, j + 1))) {
+                    subStrings.add(str.substring(i, j + 1));
+                }
+            }
+        }
+        return subStrings;
+    }
+
+
+    /**
+     * Ex.9
+     *
+     * @param string1 String
+     * @param string2 String
+     * @return int
+     */
+    public int commonCharacterCount(String string1, String string2) {
+        int count = 0;
+        List<Character> string1chars = allCharacters(string1);
+        List<Character> string2chars = allCharacters(string2);
+
+        for (int i = 0; i < string1chars.size(); i++) {
+            if (string2chars.contains(string1chars.get(i))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * This method used in Exercise 9
+     *
+     * @param str String
+     * @return List<Character>
+     */
+    public List<Character> allCharacters(String str) {
+        List<Character> characters = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (!characters.contains(str.charAt(i))) {
+                characters.add(str.charAt(i));
+            }
+        }
+        return characters;
+    }
 
 
 }
-
-
