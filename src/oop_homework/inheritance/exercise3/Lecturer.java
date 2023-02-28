@@ -1,4 +1,4 @@
-package oop_homework.inheritance;
+package oop_homework.inheritance.exercise3;
 
 public class Lecturer extends Human{
     private boolean docentDegree;

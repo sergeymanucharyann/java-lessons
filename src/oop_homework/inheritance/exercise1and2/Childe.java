@@ -1,4 +1,4 @@
-package oop_homework.inheritance;
+package oop_homework.inheritance.exercise1and2;
 
 public class Childe extends Parent {
 
@@ -18,6 +18,7 @@ public class Childe extends Parent {
      * This method is used for print
      * massege from SuperClass and SubClass.
      */
+    @Override
     void showMassage() {
         super.showMassege();
         System.out.println("Hello Child class");

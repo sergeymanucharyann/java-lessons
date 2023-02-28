@@ -9,7 +9,9 @@ public class Car {
     }
 
     public void setPassengerCount(int passengerCount) {
-        this.passengerCount = passengerCount;
+        if (passengerCount >= 2) {
+            this.passengerCount = passengerCount;
+        } else this.passengerCount = 2;
     }
 
     public char getEngineType() {
@@ -17,6 +19,8 @@ public class Car {
     }
 
     public void setEngineType(char engineType) {
-        this.engineType = engineType;
+        if (Character.isLetter(engineType)) {
+            this.engineType = engineType;
+        }
     }
 }

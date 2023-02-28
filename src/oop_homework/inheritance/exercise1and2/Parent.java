@@ -1,6 +1,6 @@
-package oop_homework.inheritance;
+package oop_homework.inheritance.exercise1and2;
 
-public class Parent {
+public abstract class Parent {
     private String massege = "Hello SuperClass class";
 
     public String getMassege() {
@@ -15,4 +15,6 @@ public class Parent {
     void showMassege() {
         System.out.println("Hello Parent class");
     }
+
+    abstract void showMassage();
 }

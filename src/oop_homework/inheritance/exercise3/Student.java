@@ -1,4 +1,4 @@
-package oop_homework.inheritance;
+package oop_homework.inheritance.exercise3;
 
 public class Student extends Human {
 
@@ -7,7 +7,7 @@ public class Student extends Human {
         return x + y;
     }
 
-    int multiple(int x, int y, int z) {
+    public int multiple(int x, int y, int z) {
         return x + y + z;
     }
 
