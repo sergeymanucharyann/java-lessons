@@ -1,7 +1,5 @@
-package string_homework;
+package second_string_homework;
 
-
-import array_homework.Array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +79,18 @@ public class SecondStringHomework {
         return returnLine;
     }
 
+    public String evenOrOdd(int[] integerList) {
+        List<String> stringList = new ArrayList<>();
+        for (int i = 0; i < integerList.length; i++) {
+            if (integerList[i] % 2 == 0) {
+                stringList.add(String.valueOf(integerList[i]));
+            } else System.out.println("odd");
+
+        }
+        return null;
+    }
+
+
     /**
      * Ex.8
      *
@@ -141,8 +151,8 @@ public class SecondStringHomework {
         List<Character> string1chars = allCharacters(string1);
         List<Character> string2chars = allCharacters(string2);
 
-        for (int i = 0; i < string1chars.size(); i++) {
-            if (string2chars.contains(string1chars.get(i))) {
+        for (Character string1char : string1chars) {
+            if (string2chars.contains(string1char)) {
                 count++;
             }
         }
@@ -164,6 +174,5 @@ public class SecondStringHomework {
         }
         return characters;
     }
-
 
 }
